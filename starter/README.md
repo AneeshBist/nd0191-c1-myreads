@@ -1,8 +1,42 @@
 # MyReads Project
 
-This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
+This project is basic representation of a library where the user selects books and mark them as per his use:
+it has two Pages : 
+Structure: 
+    1. Main Page - this is the main page that user sees which is conatining shelves  
+        a. Currently Reading - the books which user is reading currently
+        b. Want To Read - the books which a user is willing to read
+        c. Read - the Books Which the user has already read
+    2. Search Page - This page conatins an input area where the user can search books as per needs
 
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) to bootstrap the project.
+# Fucntionality & Usage
+    1. each book has an arrow in green circle at lower right corner of the book as select menu
+    2. the arrow dropdown shows the shelf in which the book is currently residing - The Current Shelf is select by default
+    3. to change a book shelf or mark the book differently,
+        a. User has to click on the new shelf and it shall be removed from current shelf and should reflect in new shelf.
+        b. if User seelects "none" from option, the book is removed from the three shelves and will not appear in Main Page
+    4. for the search page, 
+        a. if search match the books which are already present in 3 shelves of Main Page - the shelf of that book is selected by default  
+        b. if a book is being shown in search page is not present in Main Page - then "none" is selecteed by default
+        c. changes made in search page by selecting different shelf of a book would reflect in Shelves of the Main Page
+
+# Testing
+    Testing can be done by user by changing shelves. Few scenarios are as follows:
+    1. test_1: on Main page "Currently Reading", click on the books's arrow(dropdown) and change it to "read".
+            result_1: the book is removed from "Currently Reading" shelf and moved to "Read"
+    2. test_21:  on Main page "Want To Read", click on the books's arrow(dropdown) and change it to "none".
+            result_21: the book is removed from the main page
+       test_22: now go to Search Page, search for the same book which was recenlty moved to "none".
+            result_22: the book is displayed in search page as default value "none"
+    3. test_31: on Search Page, search for a book eg.,"react"
+            result_31: it displays books related to the search. if book is already present on main page, it will have the shelf selected by default.
+                 If it is not present in search page, book displays "none" as default.
+       test_31: on Search Page displaying books with a search, select a book and change it's shelf to "Read"
+            result_31: go back to Main Page, the book will be reflected on "Read" shelf
+    User can create multiple scenarios like these stated above and test accordingly...
+
+## Author
+Aneesh Bist - First Project - Implemented for OLX Udacity Front-end Developer Scholarship
 
 ## TL;DR
 

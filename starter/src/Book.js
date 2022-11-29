@@ -20,7 +20,7 @@ const Book = ({book,onUpdatingShelf}) => {
                         ></div>
                     <div className="book-shelf-changer">
                         <select onChange={handleShelfChange} value={book.shelf?book.shelf:"none"}>
-                            <option value="none" disabled>
+                            <option disabled>
                                {book.shelf ? "Move to..." : "Add to..."}
                             </option>
                             <option value="currentlyReading">
@@ -28,10 +28,8 @@ const Book = ({book,onUpdatingShelf}) => {
                             </option>
                             <option value="wantToRead" >Want to Read</option>
                             <option value="read">Read</option>
-                            {
-                                book.shelf ? <option value="none">None</option> : ""
-                            }
-                            
+                            <option value="none">None</option>
+                                                       
                         </select>
                     </div>
                     
